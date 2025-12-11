@@ -1,0 +1,22 @@
+| Color Name | HEX Code  | Description                 |
+| ---------- | --------- | --------------------------- |
+| Red        | `#FF0000` | Bright red                  |
+| Green      | `#00FF00` | Bright green                |
+| Blue       | `#0000FF` | Bright blue                 |
+| Yellow     | `#FFFF00` | Bright yellow (red + green) |
+| Cyan       | `#00FFFF` | Bright cyan (green + blue)  |
+| Magenta    | `#FF00FF` | Bright magenta (red + blue) |
+| White      | `#FFFFFF` | Full white                  |
+| Orange     | `#FFA500` | Bright orange               |
+| Pink       | `#FFC0CB` | Soft pink                   |
+| Purple     | `#800080` | Dark purple                 |
+| Lime       | `#32CD32` | Lime green                  |
+| Teal       | `#008080` | Dark cyan/teal              |
+| Navy       | `#000080` | Dark blue                   |
+| Brown      | `#A52A2A` | Medium brown                |
+| Gray       | `#808080` | Medium gray                 |
+| Light Gray | `#D3D3D3` | Light gray                  |
+| Gold       | `#FFD700` | Gold / yellow-orange        |
+| Indigo     | `#4B0082` | Deep indigo                 |
+| Violet     | `#EE82EE` | Light violet / lavender     |
+| Coral      | `#FF7F50` | Coral / soft orange-red     |
