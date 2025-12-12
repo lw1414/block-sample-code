@@ -5,8 +5,8 @@
 // ---------------------------
 // HARD-CODED WIFI CONFIG
 // ---------------------------
-const char* ssid     = "PLDTinnov";
-const char* password = "Password12345!";
+const char* ssid     = "RiveraWIFI";
+const char* password = "@Rivera20214";
 
 // ---------------------------
 // MQTT CONFIG
