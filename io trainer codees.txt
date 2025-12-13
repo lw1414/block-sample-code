@@ -1,0 +1,49 @@
+WiFi (ESP32 wifi, joystick and button RGB,LCD, Sensor Block)
+Act1 - Let there be light - Fade in and fading out of RGB 
+
+Act2 - Button Logic & Input Handling - LCD with 4 buttons and joystick , crosshair then movement when joystick is move, button designator 
+ligths up when press.
+
+Act3 - Sense the heat - aht20 with lcd gauge ui
+
+Act4 - Smart Indicator - LCD,RGB,BUZZER,TEMPHUM,LIGHTINTENSITY print sa lcd reading nung tatlo, threshold alarm buzzer, rgb light 
+                         indicator base dun sa kung hot ,cool, comfortable, ayun tapos base din un brightness dun sa light intensity
+
+Act5 - Wi-Fi Here I Come! - lcd,rgb,buzzer, led indicator connecting and connected,tone if connected,
+                             connecting print on lcd, ip printed when connected on lcd
+
+Act6 - I am the server - lcd,rgb,buzzer,generate hotspot then connect it the access the ip , inside webpage can play some tunes,change rgb
+                         brightness,sequence and color, can also type message to reflect to lcd
+Act7 - Connect me n check me - lcd,rgb,buzzer and sensor, connect to wifi generate ip, then there is a dashboard with gauges and reading updating
+                                buzzer alarms when connected to wifi , rgb lights up on connecting,wifi connected and threshold trigger,
+                                lcd printed details about connecting,ip, and reading
+
+Act8 - read lang(inserted here un sample ng simple connection ng mqtt connected at wifi with led light connectivity indicator) 
+
+Act9 - sensor data - (RGB,Sensor module and MQTT send tempphum lux to mqtt, audible sound and rgb sequence when connecting alarm when 
+                      threshold reach)
+Act9 - Test yourself(Publish) - (RGB,buzzer,LCD,Joystick same concept pa rin hung dimmer sa joystick naka corelate, un buttons may logic sequence
+                        para sa hue 0-270) wala rfid di gumana eh XD
+Act10 - Remote control ouput (subscribe buttons on and off thru mqtt)
+Act10 - Test youurself (RGB,LCD,Joystick) ginamit ko un asa link na trainer lahat 
+Act11 - OTA - upload bin file sa web update the firmware
+Act12 - Create a system combined with that magnda to roleta kung ano system gagwin per group para ala kopyahan XD
+
+
+GSM (GSM, LCD,RGB,rotary slider,sensor module)
+
+1 Getting to know GSM 	---> 	Check network registration status and ensure the SIM800L connects to a mobile network. Ensure simcard has mobile data.
+		  		Explain LED Blinking State and how to interpret network statuses.
+				Check signal quality (RSSI) periodically and display it over Serial.
+				Send SMS with SIM800L using AT command.
+
+2 SMS Blasting          --->	Use SMS to send sensor readings or messages to multiple mobile numbers. Implement AT commands to send SMS alerts.
+                                (LCD,Sensor block ,GSM)
+3 Text to Control	--->	Receive an SMS and trigger an action like toggling a relay or LED.
+                                (RGB,GSM)
+4 SMS Acknowledgement	--->	Reply automatically to incoming messages as a simple command acknowledgment system.
+                                (RGB,SLIDER,GSM) , adjust the rgb color and brightness thru slider and rotary then when we request rgb status gsm 
+                                will reply what brightness and color it is.
+5 Checking the Airquality	--->	Send an SMS command like 'STATUS' and receive a response with sensor and system info.Send msg if threshold is trigger
+                                        LCD printst the number who sent the message, also prints sent, at no message prints data of sensor (SENSOR,LCD,GSM)
+
