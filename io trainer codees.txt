@@ -47,3 +47,29 @@ GSM (GSM, LCD,RGB,rotary slider,sensor module)
 5 Checking the Airquality	--->	Send an SMS command like 'STATUS' and receive a response with sensor and system info.Send msg if threshold is trigger
                                         LCD printst the number who sent the message, also prints sent, at no message prints data of sensor (SENSOR,LCD,GSM)
 
+LoRA Activities
+1 Our LoRA messenger - 2 lora module communicating each other thru serial monitor
+2 P2P -Peer to peer where 1 module send sensor reading while the other one change status of RGB, as well as alarm when threshold is trigger
+3 Endnode & Gateway - basic end node with OTAA , and gateway authentication
+4 Gateway To IoT - end node temp hum lux with credentials and send to certain interval
+                   gateway accepts the value send it to mqtt right away
+5 Gateway to IoT but encrypted
+
+6 relay lora control - control the relay on the end node using lora , but the gateway
+                       receive command via mqtt.
+mqtt command act6
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button2" -m "ON"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button2" -m "OFF"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button1" -m "ON"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button1" -m "OFF"
+
+mqtt command act7
+mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "WiFi/act7/#"
+
+
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/button2" -m "ON"
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/button2" -m "OFF"
+
+
+interval change
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/interval" -m "10000"
