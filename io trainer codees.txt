@@ -63,6 +63,7 @@ mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01
 mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button1" -m "ON"
 mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act5/esp01/button1" -m "OFF"
 
+7 relay lora with sensor threshold, change interval thru mqtt, relay activitation thru mqtt with encryptions
 mqtt command act7
 mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "WiFi/act7/#"
 
@@ -73,3 +74,11 @@ mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001
 
 interval change
 mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/interval" -m "10000"
+
+BLE Actvities
+1 Know your ble - this activity uses only 1 ble module, which is created as a server , download nrfconnect on phone to scan and locate the server
+2 Server and Client - two ble boards module, use previous code for the server, but now use the other module to be the one connecting the server 
+                      and using the server sent message thru serial monitor on the client
+3 BLE-Broadcaster - one ble is server sending data of the sensors lux temp and hum to multiple client, using the other ble module that will be the client
+                    with lcd that prints it, to confirm that it is able to do multi client also connect the nrfconnect and check the broadcast value thru ble
+	
