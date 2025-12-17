@@ -82,3 +82,21 @@ BLE Actvities
 3 BLE-Broadcaster - one ble is server sending data of the sensors lux temp and hum to multiple client, using the other ble module that will be the client
                     with lcd that prints it, to confirm that it is able to do multi client also connect the nrfconnect and check the broadcast value thru ble
 	
+
+
+
+5 BLE-Server-With-Mqtt - one module of bluetooth that transmit data thru mqtt as well as you can set the threshold thru mqtt, the ble advertise the reading of temp,hum,lux gas and alarm
+                         use nrf to confirm ble connection
+mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/#"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/temperature" -m "22.5"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/humidity" -m "42"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/alarm" -m "0"
+
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/temperature" -m "30"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/humidity" -m "45"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/light" -m "5"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/gas" -m "80"
+
+6 Client of BLE Server with MQTT - Client of module number 5 where there is LCD,RGB and touch, touch use to set what alarm sequence used, LCD for print of values ,RGB indicator
+                                   for connecting , alarms and sequences, this is different on other client since it decodes hex on the act 5
+
