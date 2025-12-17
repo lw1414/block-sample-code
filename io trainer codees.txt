@@ -82,11 +82,11 @@ BLE Actvities
 3 BLE-Broadcaster - one ble is server sending data of the sensors lux temp and hum to multiple client, using the other ble module that will be the client
                     with lcd that prints it, to confirm that it is able to do multi client also connect the nrfconnect and check the broadcast value thru ble
 	
-
+4 RGB-BLE - one ble is server with rotary encoder and slider change brightness and color , the other client with rgb and touch touch change the color lighting sequence
 
 
 5 BLE-Server-With-Mqtt - one module of bluetooth that transmit data thru mqtt as well as you can set the threshold thru mqtt, the ble advertise the reading of temp,hum,lux gas and alarm
-                         use nrf to confirm ble connection
+                         use nrf to confirm ble connection,uses different library masyado malaki un classic library pag may mqtt na
 mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/#"
 mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/temperature" -m "22.5"
 mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/humidity" -m "42"
