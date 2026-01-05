@@ -1,6 +1,6 @@
 // ESP32 Analog Read on GPIO 32 every 3 seconds
 
-const int analogPin = 32;   // GPIO32 = ADC1_CH4 for rotary
+const int analogPin = 33;   // GPIO32 = ADC1_CH4 for rotary
 
 void setup() {
   Serial.begin(115200);
