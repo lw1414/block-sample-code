@@ -8,7 +8,7 @@
 /* =====================================================
    SECURITY
    ===================================================== */
-#define APP_KEY "APPKEY123"
+#define APP_KEY "APPKEY1234"
 
 /* =====================================================
    LORA CONFIG
@@ -246,12 +246,19 @@ void handleJoin(String msg) {
     return;
   }
 
+  // 👉 MANUALLY SET DEV ADDRESS HERE
+  String devAddr = "A1B14";
+
   LoRa.beginPacket();
-  LoRa.print("JOIN_ACCEPT|A1B2|SESS123");
+  LoRa.print("JOIN_ACCEPT|");
+  LoRa.print(devAddr);
+  LoRa.print("|SESS123");
   LoRa.endPacket();
 
-  Serial.println("🤝 JOIN accepted");
+  Serial.print("🤝 JOIN accepted, devAddr = ");
+  Serial.println(devAddr);
 }
+
 
 /* =====================================================
    HANDLE DATA
@@ -292,13 +299,13 @@ void handleData(String msg) {
   char buf[16];
 
   dtostrf(t, 4, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/temperature").c_str(), buf);
+  mqtt.publish(("LoRa/act5/" + devAddr + "/temperature").c_str(), buf);
 
   dtostrf(h, 4, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/humidity").c_str(), buf);
+  mqtt.publish(("LoRa/act5/" + devAddr + "/humidity").c_str(), buf);
 
   dtostrf(l, 5, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/light").c_str(), buf);
+  mqtt.publish(("LoRa/act5/" + devAddr + "/light").c_str(), buf);
 
   Serial.println("📤 MQTT published");
 

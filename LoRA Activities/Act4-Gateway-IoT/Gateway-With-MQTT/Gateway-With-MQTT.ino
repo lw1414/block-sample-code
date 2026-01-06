@@ -191,13 +191,13 @@ void handleData(String msg) {
   char buf[16];
 
   dtostrf(temp, 4, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/temperature").c_str(), buf);
+  mqtt.publish(("LoRa/act4/" + devAddr + "/temperature").c_str(), buf);
 
   dtostrf(hum, 4, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/humidity").c_str(), buf);
+  mqtt.publish(("LoRa/act4/" + devAddr + "/humidity").c_str(), buf);
 
   dtostrf(lux, 5, 1, buf);
-  mqtt.publish(("WiFi/act9/" + devAddr + "/light").c_str(), buf);
+  mqtt.publish(("LoRa/act4/" + devAddr + "/light").c_str(), buf);
 
   Serial.println("📤 MQTT Published");
 

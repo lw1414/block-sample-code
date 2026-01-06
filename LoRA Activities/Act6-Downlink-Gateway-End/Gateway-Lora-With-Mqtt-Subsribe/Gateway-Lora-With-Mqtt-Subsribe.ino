@@ -70,8 +70,8 @@ void setup() {
   mqtt.setServer(mqtt_server, mqtt_port);
 
   // Prepare dynamic MQTT topics using deviceId
-  snprintf(button1Topic, sizeof(button1Topic), "LoRa/act5/%s/button1", deviceId.c_str());
-  snprintf(button2Topic, sizeof(button2Topic), "LoRa/act5/%s/button2", deviceId.c_str());
+  snprintf(button1Topic, sizeof(button1Topic), "LoRa/act6/%s/button1", deviceId.c_str());
+  snprintf(button2Topic, sizeof(button2Topic), "LoRa/act6/%s/button2", deviceId.c_str());
   Serial.printf("[%lu ms] Button1 Topic: %s\n", millis(), button1Topic);
   Serial.printf("[%lu ms] Button2 Topic: %s\n", millis(), button2Topic);
 
