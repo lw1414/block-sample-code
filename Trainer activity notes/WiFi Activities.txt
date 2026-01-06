@@ -1,0 +1,70 @@
+WiFi (ESP32 wifi, joystick and button RGB,LCD, Sensor Block)
+Act1 - Let there be light - Fade in and fading out of RGB 
+Module Set 1 - RGB buzzer(alert block) and WIFI module,RGB PIN=IO14
+Module Library 1 - Adafruit_NeoPixel.h (1.15.2)
+
+
+Act2 - Button Logic & Input Handling - LCD with 4 buttons and joystick , crosshair then movement when joystick is move, button designator 
+ligths up when press.
+Module Set 2 - LCD module, buttons and joystick and wifi module, CS=IO5,DC=IO25,RST=IO14,CLK=18,MOSI=23,JOY_XPIN=32,JOY_YPIN=33,B1=IO22,B2=21
+                                                                 B3=35,B4=27
+Module Library 2 - Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+Act3 - Sense the heat - aht20 with lcd gauge ui temp hum only
+Module Set 3 - LCD module, Sensor Module and Wifi Module, CS=IO5,DC=IO25,CLK=18,MOSI=23,SDA=21,SCL=22,
+Module Library 3 - Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+
+Act4 - Smart Indicator - LCD,RGB,BUZZER,TEMPHUM,LIGHTINTENSITY print sa lcd reading nung tatlo, threshold alarm buzzer, rgb light 
+                         indicator base dun sa kung hot ,cool, comfortable, ayun tapos base din un brightness dun sa light intensity
+Module Set 4 - LCD module,RGB and Buzzer module,Sensor Module,Wifi module,CS=IO5,DC=IO25,CLK=18,MOSI=23,SDA=21,SCL=22 ,RGB=14,BUZZER=13
+Module Library 4 - Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1),Adafruit_NeoPixel.h (1.15.2)
+
+
+Act5 - Wi-Fi Here I Come! - lcd,rgb,buzzer, led indicator connecting and connected,tone if connected,
+                             connecting print on lcd, ip printed when connected on lcd
+Module set 5- LCD module,RGB and Buzzer module and WIFI module,RGB=14,BUZZER=13,CS=IO5,DC=IO25,CLK=18,MOSI=23
+Module Library 5 - Adafruit_NeoPixel.h (1.15.2),Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+Act6 - I am the server - lcd,rgb,buzzer,generate hotspot then connect it the access the ip , inside webpage can play some tunes,change rgb
+                         brightness,sequence and color, can also type message to reflect to lcd
+Module set 6 - LCD module, rgb and buzzer module ,RGB=14,BUZZER=13,CS=IO5,DC=IO25,CLK=18,MOSI=23
+Module Library 6 - Adafruit_NeoPixel.h (1.15.2),Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+
+Act7 - Connect me n check me - lcd,rgb,buzzer and sensor, connect to wifi generate ip, then there is a dashboard with gauges and reading updating
+                                buzzer alarms when connected to wifi , rgb lights up on connecting,wifi connected and threshold trigger,
+                                lcd printed details about connecting,ip, and reading
+Module set 7 - LCD module,RGB module, Sensor Module and Wifi Module ,CS=IO5,DC=IO25,CLK=18,MOSI=23,SDA=21,SCL=22 ,RGB=14,BUZZER=13
+Module Library 7 - Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1),Adafruit_NeoPixel.h (1.15.2)
+
+
+Act8 - read lang(inserted here un sample ng simple connection ng mqtt connected at wifi with led light connectivity indicator) 
+Module set 8 - rgb buzzer module and wifi module , RGB=14
+Module Library 8 - Adafruit_NeoPixel.h (1.15.2)
+
+Act9 - sensor data - (RGB,Sensor module and MQTT send tempphum lux to mqtt, audible sound and rgb sequence when connecting alarm when 
+                      threshold reach)
+Module set 9 - RGB and buzzer module , Sensor module , wifi module , SDA=21,SCL=22 ,RGB=14,BUZZER=13
+Module Library 9 - Adafruit_NeoPixel.h (1.15.2),Pubsubclient 2.8(nick oleary)
+
+
+Act9 - Test yourself(Publish) - (RGB,buzzer,LCD,Joystick same concept pa rin hung dimmer sa joystick naka corelate, un buttons may logic sequence
+                        para sa hue 0-270) 
+Module set 9(test your self) = RGB,buzzer module , LCD,Joystick button,WifiModule CS=IO5,DC=IO25,RST=IO14,CLK=18,MOSI=23,JOY_XPIN=32,
+                                                                                            JOY_YPIN=33,B1=IO22,B2=21 ,B3=35,B4=27
+Module Library 9 (test yourself) -Adafruit_NeoPixel.h (1.15.2),Pubsubclient 2.8(nick oleary),Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+Act9 - Test yourself(RFID) - RFID module,Wifi module , SS=5,RST=27,BUZZERPIN=13
+Module Library(RFID) = Pubsubclient 2.8(nick oleary),MFRC522(1.4.12)
+
+Act10 - Remote control ouput (subscribe buttons on and off thru mqtt)
+Act10 Set module - rgb only and wifi module ,RGB=14,BUZZER=13
+Module Library Set- Adafruit_NeoPixel.h (1.15.2),Pubsubclient 2.8(nick oleary)
+
+Act10 - Test youurself (RGB,LCD,Joystick) ginamit ko un asa link na trainer lahat 
+Act10 - CS=IO5,DC=IO25,RST=IO14,CLK=18,MOSI=23,JOY_XPIN=32,JOY_YPIN=33,B1=IO22,B2=21 ,B3=35,B4=27,RGB=14,BUZZER=13
+Module Library Set- Adafruit_NeoPixel.h (1.15.2),Pubsubclient 2.8(nick oleary),Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+Act11 - OTA - upload bin file sa web update the firmware(no library needed)
+Act12 - Create a system combined with that magnda to roleta kung ano system gagwin per group para ala kopyahan XD

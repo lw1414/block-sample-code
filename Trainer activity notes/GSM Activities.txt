@@ -1,0 +1,53 @@
+GSM Activities(GSM, LCD,RGB,rotary slider,sensor module)
+GSM module general wiring(GSM_RX=17,GSM_TX=16,PWRKEY=4)
+
+1 Getting to know GSM 	---> 	Check network registration status and ensure the SIM800L connects to a mobile network. Ensure simcard has mobile data.
+act1 = simcard (must know the number), GSM module
+
+		  		Explain LED Blinking State and how to interpret network statuses.
+				Check signal quality (RSSI) periodically and display it over Serial.
+				Send SMS with SIM800L using AT command.
+
+  QUICK AT-COMMAND CHEAT-SHEET (type these in Serial Monitor):
+  - AT                -> test module (expect OK)
+  - AT+CPIN?          -> SIM status (expect +CPIN: READY)
+  - AT+CSQ            -> signal quality (example +CSQ: 15,0)
+  - AT+CREG?          -> network registration (example +CREG: 0,1 means registered)
+  - AT+CMGF=1         -> set SMS text mode
+  - AT+CMGS="+63..."  -> begin SMS send (wait for '>')
+  - /send             -> special command in this sketch: sends CTRL+Z (ASCII 26)
+
+
+
+
+
+
+2 SMS Blasting          --->	Use SMS to send sensor readings if threshold exceeds or messages to multiple mobile numbers. Implement AT commands to send  	                        SMS alerts.
+                                (LCD,Sensor block ,GSM)
+act2 = simcard,GSM module,LCD module,Sensor Module 
+     = sensor module SDA=21,SCL=22 
+     = LCD module(CS=IO5,DC=IO25,CLK=18,MOSI=23)Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+
+3 Text to Control	--->	Receive an SMS and trigger an action like toggling a relay or LED.
+                                (RGB,GSM) (message format- BRIGHTNESS:100 COLOR:RED)
+act3 = Simcard,GSM module,RGB module and touch
+     = touch module(rgb pin=14,touch pin=34)Adafruit_NeoPixel.h (1.15.2)
+
+
+
+4 SMS Acknowledgement	--->	Reply automatically to incoming messages as a simple command acknowledgment system.
+                                (RGB,SLIDER,GSM) , adjust the rgb color and brightness thru slider and rotary then when we request rgb status gsm 
+                                will reply what brightness and color it is.(message to number- RGB STATUS)
+act4 = Simcard GSM,slider and rotary module, RGB module
+     = RGB module(RGBPIN=14)(Adafruit_NeoPixel.h (1.15.2))
+     = Slider and rotary module(slider=33,rotary=32)
+
+
+5 Checking the Airquality	--->	Send an SMS command like 'STATUS' and receive a response with sensor and system info.Send msg if threshold is trigger
+                                        LCD printst the number who sent the message, also prints sent, at no message prints data of sensor (SENSOR,LCD,GSM)
+
+
+act5 = Simcard , GSM module, Sensor module, LCD module
+     = sensor module SDA=21,SCL=22  
+     = LCD module(CS=IO5,DC=IO25,CLK=18,MOSI=23)Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)

@@ -1,0 +1,62 @@
+LoRA Activities(lora spi pins =SCK-18,MISO-19,MOSI-23,SS-5,RST-4)(standard lora library LoRa.h by Sandeep Mistry Version 0.80
+)
+act1 Our LoRA messenger - 2 lora module communicating each other thru serial monitor
+act1 Lib - LoRa.h by Sandeep Mistry Version 0.80
+
+
+
+2 P2P -Peer to peer where 1 module send sensor reading while the other one change status of RGB, as well as alarm when threshold is trigger
+act2 lib-Adafruit_NeoPixel.h (1.15.2)
+act 2 sensor node - SDA=21,SCL=22,
+act 2 gw node - RGB=14,BUZZER=13
+
+3 Endnode & Gateway - basic end node with OTAA , and gateway authentication
+act 3 - two lora module only
+
+
+4 Gateway To IoT - end node temp hum lux with credentials and send to certain interval
+                   gateway accepts the value send it to mqtt right away
+act4-  2 lora module , 1 gw(Pubsubclient 2.8(nick oleary)) , 1 endnode with sensor module SDA=21,SCL=22
+
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act4/A1B2/temperature', ... (4 bytes))
+27.5
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act4/A1B2/humidity', ... (4 bytes))
+42.3
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act4/A1B2/light', ... (5 bytes))
+
+
+
+5 Gateway to IoT but encrypted(AESLib Matej Sychra 2.3.6)
+act5 - end node and sensor module, gw node and rgb module
+act5 lib - 2 lora module , 1 gw(Pubsubclient 2.8(nick oleary)),RGB14,Buzzeer 13 , 1 endnode with sensor module SDA=21,SCL=22
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act5/A1B14/temperature', ... (4 bytes))
+29.0
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act5/A1B14/humidity', ... (4 bytes))
+44.2
+Client null received PUBLISH (d0, q0, r0, m0, 'LoRa/act5/A1B14/light', ... (5 bytes))
+ 69.2
+
+
+6 relay lora control - control the relay on the end node using lora , but the gateway
+                       receive command via mqtt.
+act6 lib -1 end node relay1=14,relay2=25 ,1gw node (Pubsubclient 2.8(nick oleary))
+
+mqtt command act6
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act6/esp01/button2" -m "ON"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act6/esp01/button2" -m "OFF"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act6/esp01/button1" -m "ON"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act6/esp01/button1" -m "OFF"
+
+7 relay lora with sensor threshold, change interval thru mqtt, relay activitation thru mqtt with encryptions
+mqtt command act7
+act7 lib -1 end node relay1=14,relay2=25,sensor module SDA=21,SCL=22,MQPIN=32 
+          1 gw node (Pubsubclient 2.8(nick oleary)),RGB=14,BUZZER=13
+
+mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/#"
+
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/button2" -m "ON"
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/button2" -m "OFF"
+
+
+interval change
+mosquitto_pub -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "LoRa/act7/NODE_001/interval" -m "10000"

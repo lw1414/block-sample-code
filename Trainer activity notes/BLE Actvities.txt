@@ -1,0 +1,40 @@
+BLE Actvities
+1 Know your ble - this activity uses only 1 ble module, which is created as a server , download nrfconnect on phone to scan and locate the server
+act1 - default ble library -1 ble module
+
+2 Server and Client - two ble boards module, use previous code for the server, but now use the other module to be the one connecting the server 
+                      and using the server sent message thru serial monitor on the client
+act2 - default ble library no download uses 2 ble module
+
+
+3 BLE-Broadcaster - one ble is server sending data of the sensors lux temp and hum to multiple client, using the other ble module that will be the client
+                    with lcd that prints it, to confirm that it is able to do multi client also connect the nrfconnect and check the broadcast value thru ble
+act3 - 1 server with sensor module SDA=21,SCL=22 , 1 client LCD module(CS=IO5,DC=IO25,CLK=18,MOSI=23)Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1)
+
+	
+4 RGB-BLE - one ble is server with rotary encoder and slider change brightness and color , the other client with rgb and touch touch change the color lighting sequence
+act4 - 1 server with rotary encoder and slider module(slider pin=33,rotary pin=32),1 client rgb and touch module(rgb pin=14,touch pin=34)Adafruit_NeoPixel.h (1.15.2)
+
+
+
+
+5 BLE-Server-With-Mqtt - one module of bluetooth that transmit data thru mqtt as well as you can set the threshold thru mqtt, the ble advertise the reading of temp,hum,lux gas and alarm
+act5-1 server with sensor module SDA=21,SCL=22 ,NimBLE-Arduino(h2zero-2.3.7) ,Pubsubclient 2.8(nick oleary)
+
+
+                         use nrf to confirm ble connection,uses different library masyado malaki un classic library pag may mqtt na
+mosquitto_sub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/#"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/temperature" -m "22.5"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/humidity" -m "42"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/alarm" -m "0"
+
+
+downlink for threshold
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/temperature" -m "30"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/humidity" -m "45"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/light" -m "5"
+mosquitto_pub -d -h innovph.com -p 1883 -u mqtt -P ICPHmqtt! -t "BLE/act5/esp01/threshold/gas" -m "80"
+
+6 Client of BLE Server with MQTT - Client of module number 5 where there is LCD,RGB and touch, touch use to set what alarm sequence used, LCD for print of values ,RGB indicator for connecting , alarms and sequences, this is different on other client since it decodes hex on the act 5
+act6 -1 client LCD module(CS=IO5,DC=IO25,CLK=18,MOSI=23)Adafruit_GFX(1.12.4),Adafruit_GC9A01A(1.1.1),1 client rgb and touch module(rgb pin=14,touch pin=34)Adafruit_NeoPixel.h (1.15.2)
+
