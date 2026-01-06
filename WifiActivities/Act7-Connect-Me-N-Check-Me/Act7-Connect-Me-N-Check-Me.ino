@@ -9,8 +9,8 @@
 // ==========================
 // 1. WiFi Configuration
 // ==========================
-const char* ssid = "RiveraWIFI";
-const char* password = "@Rivera20214";
+const char* ssid = "WIFI";
+const char* password = "PASS1234";
 
 // ==========================
 // 2. Sensor Addresses

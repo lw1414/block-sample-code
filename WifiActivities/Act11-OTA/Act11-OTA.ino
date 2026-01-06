@@ -6,9 +6,10 @@
 // WiFi CREDENTIALS
 // These are the WiFi name and password that the ESP32
 // will connect to during startup.
+//http://10.95.204.178/update
 // -----------------------------------------------------
-const char* ssid = "RiveraWIFI";
-const char* password = "@Rivera20214";
+const char* ssid = "WIFI";
+const char* password = "PASS1234";
 
 // -----------------------------------------------------
 // CREATE A WEBSERVER INSTANCE

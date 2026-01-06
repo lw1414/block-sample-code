@@ -22,7 +22,7 @@
 // ------------------------
 #define TFT_CS    5
 #define TFT_DC    25
-#define TFT_RST   14
+#define TFT_RST   -1
 #define TFT_SCLK  18
 #define TFT_MOSI  23
 Adafruit_GC9A01A tft(TFT_CS, TFT_DC, TFT_RST); // Create TFT object
@@ -56,8 +56,8 @@ Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 // ------------------------
 // WiFi + MQTT configuration
 // ------------------------
-const char* ssid     = "RiveraWIFI";
-const char* password = "@Rivera20214";
+const char* ssid     = "WIFI";
+const char* password = "PASS1234";
 const char* mqtt_server = "innovph.com";
 const int   mqtt_port   = 1883;
 const char* mqtt_user   = "mqtt";

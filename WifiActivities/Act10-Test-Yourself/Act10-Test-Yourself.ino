@@ -46,8 +46,8 @@ Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 // ------------------------
 // WiFi / MQTT Configuration
 // ------------------------
-const char* ssid = "RiveraWIFI";         // WiFi SSID
-const char* password = "@Rivera20214";   // WiFi Password
+const char* ssid = "WIFI";         // WiFi SSID
+const char* password = "PASS1234";   // WiFi Password
 
 const char* mqtt_server = "innovph.com"; // MQTT Broker
 const int   mqtt_port   = 1883;          // MQTT Port

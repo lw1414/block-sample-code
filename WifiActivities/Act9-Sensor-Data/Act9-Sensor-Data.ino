@@ -24,8 +24,8 @@
 // ---------------------------
 // WiFi Credentials
 // ---------------------------
-const char* ssid     = "RiveraWIFI";
-const char* password = "@Rivera20214";
+const char* ssid     = "WIFI";
+const char* password = "PASS1234";
 
 // ---------------------------
 // MQTT Server Login
