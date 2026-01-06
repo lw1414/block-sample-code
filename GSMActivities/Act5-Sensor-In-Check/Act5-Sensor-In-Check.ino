@@ -32,10 +32,10 @@ HardwareSerial gsm(1);            // Use Serial1 for GSM communication
 Adafruit_GC9A01A tft(TFT_CS, TFT_DC, TFT_RST);  // TFT display object
 
 // =====================================================
-// REGISTERED NUMBERS
+// REGISTERED NUMBERS//text STATUS to used number//
 // =====================================================
 String phoneNumbers[5] = {       // Array to store phone numbers allowed to receive alerts
-  "+639392672086",
+  "+639928900314",
   "+639916425321",
   "",
   "",
@@ -84,7 +84,7 @@ float gasPPM = 0;                               // Store gas concentration in pp
 float TEMP_THRESHOLD  = 40;
 float HUM_THRESHOLD   = 70;
 float LIGHT_THRESHOLD = 800;
-float GAS_THRESHOLD   = 10;   // ppm
+float GAS_THRESHOLD   = 1;   // ppm
 
 bool alertSent = false;      // Flag to prevent multiple alerts
 

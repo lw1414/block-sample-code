@@ -1,6 +1,6 @@
 #include <HardwareSerial.h>       // Include library for extra serial ports (we need this for SIM800C GSM module)
 #include <Adafruit_NeoPixel.h>    // Include library to control NeoPixel RGB LEDs
-
+//Message formate RGB STATUS
 // ======================================================
 // RGB COLOR STRUCTURE
 // ======================================================

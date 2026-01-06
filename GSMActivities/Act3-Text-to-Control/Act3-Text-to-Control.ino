@@ -31,7 +31,7 @@ RGB getColor(String color) {
 
   return {0, 255, 0};  // default = GREEN
 }
-
+//message format- BRIGHTNESS:100 COLOR:RED
 // ----------------------------------------------------
 // Apply color + brightness to NeoPixel strip
 // ----------------------------------------------------

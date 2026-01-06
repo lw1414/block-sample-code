@@ -8,8 +8,8 @@
    WIFI CONFIG
 ========================= */
 // These are your WiFi credentials. Replace with your network's SSID and password.
-const char* WIFI_SSID = "YOUR_WIFI";
-const char* WIFI_PASS = "YOUR_PASS";
+const char* WIFI_SSID = "PLDTinnov";
+const char* WIFI_PASS = "Password12345!";
 
 /* =========================
    MQTT CONFIG
